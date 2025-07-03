@@ -116,72 +116,40 @@ const FileUpload: React.FC<FileUploadProps> = ({ onDataParsed, isLoading, setIsL
             Your CSV file should contain the following columns (header row required):
           </p>
           <div className="bg-background p-3 rounded border font-mono text-xs overflow-x-auto">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left p-1 border-r border-border">Column</th>
-                  <th className="text-left p-1 border-r border-border">Example</th>
-                  <th className="text-left p-1">Description</th>
-                </tr>
-              </thead>
-              <tbody className="text-muted-foreground">
-                <tr className="border-b border-border/50">
-                  <td className="p-1 border-r border-border/50 font-medium">MAC</td>
-                  <td className="p-1 border-r border-border/50">B8:27:EB:42:F0:FB</td>
-                  <td className="p-1">BSSID of access point</td>
-                </tr>
-                <tr className="border-b border-border/50">
-                  <td className="p-1 border-r border-border/50 font-medium">SSID</td>
-                  <td className="p-1 border-r border-border/50">MyNetwork</td>
-                  <td className="p-1">Network name (can be empty)</td>
-                </tr>
-                <tr className="border-b border-border/50">
-                  <td className="p-1 border-r border-border/50 font-medium">AuthMode</td>
-                  <td className="p-1 border-r border-border/50">[WPA2-PSK-CCMP][ESS]</td>
-                  <td className="p-1">Security protocols</td>
-                </tr>
-                <tr className="border-b border-border/50">
-                  <td className="p-1 border-r border-border/50 font-medium">FirstSeen</td>
-                  <td className="p-1 border-r border-border/50">25/10/2023 02:43</td>
-                  <td className="p-1">First detection timestamp</td>
-                </tr>
-                <tr className="border-b border-border/50">
-                  <td className="p-1 border-r border-border/50 font-medium">Channel</td>
-                  <td className="p-1 border-r border-border/50">7</td>
-                  <td className="p-1">WiFi channel number</td>
-                </tr>
-                <tr className="border-b border-border/50">
-                  <td className="p-1 border-r border-border/50 font-medium">RSSI</td>
-                  <td className="p-1 border-r border-border/50">-56</td>
-                  <td className="p-1">Signal strength (dBm)</td>
-                </tr>
-                <tr className="border-b border-border/50">
-                  <td className="p-1 border-r border-border/50 font-medium">CurrentLatitude</td>
-                  <td className="p-1 border-r border-border/50">55.961167</td>
-                  <td className="p-1">GPS latitude coordinate</td>
-                </tr>
-                <tr className="border-b border-border/50">
-                  <td className="p-1 border-r border-border/50 font-medium">CurrentLongitude</td>
-                  <td className="p-1 border-r border-border/50">-3.260495</td>
-                  <td className="p-1">GPS longitude coordinate</td>
-                </tr>
-                <tr className="border-b border-border/50">
-                  <td className="p-1 border-r border-border/50 font-medium">AltitudeMeters</td>
-                  <td className="p-1 border-r border-border/50">55.5155</td>
-                  <td className="p-1">Altitude in meters</td>
-                </tr>
-                <tr className="border-b border-border/50">
-                  <td className="p-1 border-r border-border/50 font-medium">AccuracyMeters</td>
-                  <td className="p-1 border-r border-border/50">0</td>
-                  <td className="p-1">GPS accuracy in meters</td>
-                </tr>
-                <tr>
-                  <td className="p-1 border-r border-border/50 font-medium">Type</td>
-                  <td className="p-1 border-r border-border/50">WIFI</td>
-                  <td className="p-1">Network type identifier</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-muted-foreground">
+            <div className="font-medium text-foreground">MAC</div>
+            <div>BSSID of access point</div>
+
+            <div className="font-medium text-foreground">SSID</div>
+            <div>Network name (can be empty)</div>
+
+            <div className="font-medium text-foreground">AuthMode</div>
+            <div>Security protocols</div>
+
+            <div className="font-medium text-foreground">FirstSeen</div>
+            <div>First detection timestamp</div>
+
+            <div className="font-medium text-foreground">Channel</div>
+            <div>WiFi channel number</div>
+
+            <div className="font-medium text-foreground">RSSI</div>
+            <div>Signal strength (dBm)</div>
+
+            <div className="font-medium text-foreground">CurrentLatitude</div>
+            <div>GPS latitude coordinate</div>
+
+            <div className="font-medium text-foreground">CurrentLongitude</div>
+            <div>GPS longitude coordinate</div>
+
+            <div className="font-medium text-foreground">AltitudeMeters</div>
+            <div>Altitude in meters</div>
+
+            <div className="font-medium text-foreground">AccuracyMeters</div>
+            <div>GPS accuracy in meters</div>
+
+            <div className="font-medium text-foreground">Type</div>
+            <div>Network type identifier</div>
+          </div>
           </div>
           <p className="text-xs text-muted-foreground mt-3">
             All data processing is done locally in your browser. Your file is never uploaded to any server.
