@@ -71,7 +71,15 @@ const Index = () => {
             </TabsContent>
 
             <TabsContent value="map" className="space-y-6">
-              <WiFiMap networks={parsedData.networks} />
+              <div className="flex items-center space-x-2 mb-4">
+                <Switch
+                  id="show-hidden-networks"
+                  checked={showHiddenNetworks}
+                  onCheckedChange={setShowHiddenNetworks}
+                />
+                <Label htmlFor="show-hidden-networks">Show Hidden Networks</Label>
+              </div>
+              <WiFiMap networks={parsedData.networks.filter(network => showHiddenNetworks || network.SSID !== '')} />
             </TabsContent>
 
             <TabsContent value="data" className="space-y-6">
