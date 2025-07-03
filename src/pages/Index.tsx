@@ -7,6 +7,8 @@ import Dashboard from '@/components/Dashboard';
 import DataTable from '@/components/DataTable';
 import { ParsedData } from '@/types/wifi';
 import { Shield, MapPin, BarChart3, Table, Wifi } from 'lucide-react';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
 
 const Index = () => {
   const [parsedData, setParsedData] = useState<ParsedData | null>(null);
