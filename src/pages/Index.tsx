@@ -13,6 +13,7 @@ import { Label } from '@/components/ui/label';
 const Index = () => {
   const [parsedData, setParsedData] = useState<ParsedData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [showHiddenNetworks, setShowHiddenNetworks] = useState(false);
 
   const handleDataParsed = (data: ParsedData) => {
     setParsedData(data);

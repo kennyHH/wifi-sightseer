@@ -168,8 +168,8 @@ export function parseCSV(csvContent: string): Promise<ParsedData> {
 
           results.data.forEach((row: any) => {
             const network: WiFiNetwork = {
-              MAC: row.MAC || '',
-              SSID: row.SSID || '',
+              MAC: (row.MAC || '').trim().toUpperCase(),
+              SSID: (row.SSID || '').trim(),
               AuthMode: row.AuthMode || '',
               FirstSeen: row.FirstSeen || '',
               Channel: parseInt(row.Channel) || 0,
@@ -191,7 +191,7 @@ export function parseCSV(csvContent: string): Promise<ParsedData> {
               const key = `${network.MAC}-${network.SSID}`;
               const existing = uniqueNetworks.get(key);
 
-              // Keep the entry with the strongest signal (lowest RSSI is strongest)
+              // Keep the entry with the strongest signal (higher RSSI value indicates stronger signal)
               if (!existing || network.RSSI > existing.RSSI) {
                 uniqueNetworks.set(key, network);
               }
